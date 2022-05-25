@@ -1,0 +1,20 @@
+.counter {
+  display: flex;
+  width: 500px;
+  box-shadow: 0 1em 0.25em #3333;
+  border-radius: 1em;
+  padding: 1em;
+  align-items: stretch;
+  font-size: 2em;
+  margin: 1em auto;
+}
+
+.counter > * {
+  flex: 1;
+  text-align: center;
+}
+
+.counter button {
+  align-self: stretch;
+  font-size: inherit;
+}

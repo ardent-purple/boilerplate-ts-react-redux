@@ -5,7 +5,10 @@ const parts = require('./webpack.parts')
 
 const commonConfig = merge([
   { entry: ['./src'] },
-  parts.html({ title: 'Boilerplate TS' }),
+  parts.html({
+    title: 'Boilerplate TS+React+Redux',
+    body: '<div id="root"></div>',
+  }),
   parts.transpileTS(),
 ])
 

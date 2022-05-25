@@ -4,10 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { MiniHtmlWebpackPlugin } = require('mini-html-webpack-plugin')
 const { WebpackPluginServe } = require('webpack-plugin-serve')
 
-exports.html = ({ title }) => ({
+exports.html = ({ title, body = '' }) => ({
   plugins: [
     new MiniHtmlWebpackPlugin({
-      context: { title },
+      context: { title, body },
     }),
   ],
 })
@@ -44,9 +44,9 @@ exports.extractCSS = () => ({
 /* TRANSPILERS */
 
 exports.transpileTS = () => ({
-  resolve: { extensions: ['.ts', '.js'] },
+  resolve: { extensions: ['.tsx', '.ts', '.js'] },
   module: {
-    rules: [{ test: /\.ts$/, use: ['ts-loader'] }],
+    rules: [{ test: /\.tsx?$/, use: ['ts-loader'] }],
   },
 })
 
